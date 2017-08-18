@@ -1,4 +1,5 @@
 import os
+import sys
 from flask import Flask
 from flask_restful import Resource, Api
 
@@ -8,7 +9,7 @@ api = Api(app)
 
 class HelloWorld(Resource):
     def get(self):
-        return {'hello': 'world'}
+        return {'Python Version': sys.version}
 
 api.add_resource(HelloWorld, '/')
 
